@@ -11,11 +11,14 @@ public class ApiError {
 
     private int status;
     private String message;
-    private long timestamp;
+    private Date timestamp;
+    private String path;
 
-    public ApiError(int status, String message){
-        this.timestamp = new Date().getTime();
+    public ApiError(int status, String message,String path){
+        this.timestamp = new Date();
         this.message = message;
+        this.status = status;
+        this.path = path;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.springproject.rentalcar.error;
+package com.springproject.rentalcar.exception;
 
 
 import lombok.AllArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class BusinessException extends RuntimeException {
 
-    private String errorCode;
+    private int errorCode;
     private String errorMessage;
 
 }
