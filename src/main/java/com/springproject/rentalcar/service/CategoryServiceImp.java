@@ -22,7 +22,7 @@ public class CategoryServiceImp implements CategoryService{
         List<Category> categoryList =  categoryRepository.findAll();
 
         if(categoryList.size() == 0){
-            throw new EmptyTableException("table empty");
+            throw new EmptyTableException(" category table is empty");
         }else{
             return categoryList;
         }

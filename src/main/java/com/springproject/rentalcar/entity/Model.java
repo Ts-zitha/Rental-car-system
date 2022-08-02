@@ -12,24 +12,28 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name= "category")
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "categoryId")
-public class Category {
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name="model")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "modelId")
+public class Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long categoryId;
+    private Long modelId;
 
-    @Column(
-            nullable = false,
-            name = "car_category"
-    )
-    private String type;
+    @Column(nullable = false)
+    private String modelName;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private String modelYear;
+
+    @Column(nullable = false)
+    private String modelMake;
+
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
 //    @JsonManagedReference
     private List<Car> cars;
+
+
 }
